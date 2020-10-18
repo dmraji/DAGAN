@@ -5,7 +5,7 @@ from dagan_architectures import UResNetGenerator, Discriminator
 class DAGAN:
     def __init__(self, input_x_i, input_x_j, dropout_rate, generator_layer_sizes,
                  discriminator_layer_sizes, generator_layer_padding, z_inputs, batch_size=100, z_dim=100,
-                 num_channels=1, is_training=True, augment=True, discr_inner_conv=0, gen_inner_conv=0, num_gpus=1, 
+                 num_channels=1, is_training=True, augment=True, discr_inner_conv=0, gen_inner_conv=0, num_gpus=0, 
                  use_wide_connections=False):
 
         """

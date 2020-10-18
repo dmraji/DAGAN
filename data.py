@@ -135,12 +135,12 @@ class DAGANDataset(object):
         x_input_b_batch = []
         if dataset_name == "gen":
             x_input_a = self.get_next_gen_batch()
-            for n_batch in range(self.num_of_gpus):
+            for n_batch in range(self.num_of_gpus + 1):
                 x_input_a_batch.append(x_input_a)
             x_input_a_batch = np.array(x_input_a_batch)
             return x_input_a_batch
         else:
-            for n_batch in range(self.num_of_gpus):
+            for n_batch in range(self.num_of_gpus + 1):
                 x_input_a, x_input_b = self.get_batch(dataset_name)
                 x_input_a_batch.append(x_input_a)
                 x_input_b_batch.append(x_input_b)
